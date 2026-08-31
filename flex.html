@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGMA FLEX — Fractional GC</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#0F2A20;overflow-x:hidden;color:#fff;-webkit-font-smoothing:antialiased}
+:root{--gold:#C8B090;--green:#102821;--green2:#0A1410;--paper:#F7F3EB}
+
+/* NAV */
+.nav-link{color:#fff;text-decoration:none;font-size:10px;letter-spacing:2.5px;transition:.25s;margin-left:32px;text-transform:uppercase;opacity:.7}
+.nav-link:hover{color:var(--gold);opacity:1}
+.nav-btn{border:1px solid var(--gold);color:#fff;padding:9px 18px;text-decoration:none;font-size:10px;letter-spacing:2px;transition:.25s;margin-left:32px;text-transform:uppercase}
+.nav-btn:hover{background:var(--gold);color:var(--green2)}
+.nav-btn.activo{border-color:rgba(200,176,144,.35);color:var(--gold);opacity:.7;pointer-events:none;background:rgba(200,176,144,.08)}
+
+/* HERO */
+.hero-flex{min-height:100vh;background:radial-gradient(120% 120% at 15% 0%,#143728 0%,#122A1F 55%,#0A1410 100%);display:grid;grid-template-columns:1.1fr .9fr;gap:80px;padding:110px 8% 90px 8%;align-items:start}
+.hero-flex>div:first-child{padding-top:32px;display:flex;flex-direction:column;justify-content:center;min-height:calc(100vh - 200px)}
+.eyebrow-mini{border:1px solid rgba(200,176,144,.35);color:var(--gold);font-size:9px;letter-spacing:4px;text-transform:uppercase;padding:8px 14px;display:inline-block;margin-bottom:28px;background:rgba(200,176,144,.06)}
+.hero-flex h1{font-family:'Playfair Display';font-size:62px;line-height:.92;font-weight:300;color:#fff}
+.hero-flex h1 i{color:var(--gold);font-style:italic;font-weight:300}
+.sub-latam{margin-top:18px;display:flex;align-items:center;gap:14px;color:#fff;font-size:10px;letter-spacing:4px;text-transform:uppercase}
+.sub-latam::before{content:'';width:32px;height:1px;background:var(--gold);display:block}
+.hero-desc{margin-top:18px;margin-bottom:26px;color:rgba(255,255,255,.6);font-size:14px;line-height:1.7;max-width:420px}
+
+/* SECCIONES */
+.sec-claro{background:var(--paper);padding:100px 8%;color:var(--green)}
+.sec-claro .eyebrow{color:var(--gold);font-size:10px;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:16px;font-weight:600}
+.titulo-sec{font-family:'Playfair Display';font-size:42px;font-weight:300;line-height:1.1;margin-bottom:40px}
+.titulo-sec.osc{color:var(--green)}
+.titulo-sec.claro{color:#fff}
+
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(16,40,33,.1);border:1px solid rgba(16,40,33,.1)}
+.card{background:#fff;padding:36px 28px;transition:all .5s cubic-bezier(.16,1,.3,1);position:relative}
+.card::after{content:'';position:absolute;left:28px;right:28px;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.5s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(16,40,33,.08)}
+.card:hover::after{transform:scaleX(1)}
+.card svg{width:32px;height:32px;stroke:var(--green);stroke-width:1.3;fill:none;margin-bottom:22px;display:block}
+.card h3{font-family:'Playfair Display';font-size:19px;color:var(--green);margin-bottom:12px}
+.card p{font-size:13px;line-height:1.7;color:rgba(16,40,33,.7)}
+
+.sec-oscuro{background:var(--green);padding:100px 8%;position:relative}
+.tabla-comp{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.1);margin-top:30px}
+.col-comp{padding:36px}
+.col-comp.trad{background:#0A1A15}
+.col-comp.flex{background:#0F2A20;border:1px solid var(--gold)}
+.col-comp h4{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.col-comp.trad h4{color:rgba(255,255,255,.5)}
+.col-comp.flex h4{color:var(--gold)}
+.col-comp ul{list-style:none}
+.col-comp li{font-size:13px;line-height:1.6;margin-bottom:12px;opacity:.7;padding-left:16px;position:relative}
+.col-comp li::before{content:'—';position:absolute;left:0;opacity:.5}
+.col-comp.flex li{color:#fff;opacity:.9}
+
+/* FIX PREMIUM PLANES - AQUI ESTABA ROTO */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:transparent;border:none;margin-top:40px;align-items:stretch}
+.plan{background:#fff;padding:40px 32px;transition:all .6s cubic-bezier(.16,1,.3,1);position:relative;border:1px solid rgba(16,40,33,.08);display:flex;flex-direction:column}
+.plan:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(16,40,33,.12)}
+.plan h5{font-size:10px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;opacity:.5;color:var(--green)}
+.plan .price{font-family:'Playfair Display';font-size:28px;margin-bottom:14px;color:var(--green)}
+.plan p{font-size:13px;opacity:.7;color:var(--green)}
+.plan ul{list-style:none;margin-top:18px}
+.plan li{font-size:12.5px;line-height:1.6;margin-bottom:10px;opacity:.75;color:var(--green);padding-left:14px;position:relative}
+.plan li::before{content:'•';position:absolute;left:0;color:var(--gold)}
+/* DESTACADO CORREGIDO - SIN TAPAR */
+.plan.destacado{background:var(--green);color:#fff;border:1px solid var(--gold);transform:translateY(-16px);box-shadow:0 24px 48px rgba(0,0,0,.35);z-index:2}
+.plan.destacado h5{color:var(--gold);opacity:1}
+.plan.destacado .price{color:#fff}
+.plan.destacado p{color:rgba(255,255,255,.7)}
+.plan.destacado li{color:rgba(255,255,255,.85);opacity:1}
+.plan.destacado li::before{color:var(--gold)}
+.plan.destacado::after{content:'';position:absolute;inset:-1px;border:1px solid var(--gold);opacity:.2;pointer-events:none}
+
+.btn-flex{background:var(--gold);color:var(--green);padding:16px 28px;text-decoration:none;font-size:11px;letter-spacing:3px;text-transform:uppercase;display:inline-block;font-weight:600;transition:.25s;border:1px solid var(--gold)}
+.btn-flex:hover{background:#d6c2a3;transform:translateY(-1px)}
+.btn-flex.dark{background:var(--green);color:#fff;border-color:var(--green)}
+
+#preloader-flex{position:fixed;inset:0;background:var(--green2);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s ease}
+#preloader-flex.oculto{opacity:0;pointer-events:none}
+footer{padding:30px 8%;background:var(--green);text-align:center;color:rgba(255,255,255,.4);font-size:11px;letter-spacing:2px;border-top:1px solid rgba(200,176,144,.08)}
+
+@media(max-width:980px){
+.hero-flex{grid-template-columns:1fr;padding:100px 6% 60px 6%;gap:32px}
+.hero-flex>div:first-child{min-height:auto}
+.grid3,.tabla-comp,.plans{grid-template-columns:1fr;gap:16px}
+.hero-flex h1{font-size:44px}
+.plan.destacado{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="preloader-flex">
+  <img src="./isologo-dorado-transparente.png" alt="RGMA" style="height:54px;width:auto;display:block">
+  <span style="color:#C8B090;letter-spacing:6px;font-size:10px;font-family:'Inter',sans-serif;margin-top:22px;display:block;text-transform:uppercase">RGMA FLEX</span>
+  <span style="width:32px;height:1px;background:#C8B090;display:block;margin-top:18px;opacity:.6"></span>
+</div>
+
+<header style="position:fixed;top:0;left:0;width:100%;height:72px;background:#0A1410;display:flex;align-items:center;justify-content:space-between;padding:0 3%;z-index:1000;border-bottom:1px solid rgba(255,255,255,.08)">
+  <a href="index.html" style="display:flex;align-items:center;gap:16px;text-decoration:none">
+    <img src="./isologo-dorado-transparente.png" alt="RGMA" style="height:34px;width:auto;display:block">
+    <span style="width:1px;height:22px;background:rgba(255,255,255,0.2);display:inline-block"></span>
+    <span style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:2.8px;line-height:1.5;color:#C8B090;text-transform:uppercase">
+      <span style="display:block">RIGANTI, GEILER</span><span style="display:block">& MÁRQUEZ ALLURALDE</span>
+    </span>
+  </a>
+  <nav style="display:flex;align-items:center">
+    <a href="index.html" class="nav-link">INICIO</a>
+    <a href="index.html#estudio" class="nav-link">EL ESTUDIO</a>
+    <a href="index.html#practicas" class="nav-link">PRÁCTICAS</a>
+    <a href="flex.html" class="nav-btn activo">ÁREA FLEX</a>
+    <a href="index.html#contacto" class="nav-btn">CONTACTO</a>
+  </nav>
+</header>
+
+<section class="hero-flex">
+<div>
+<span class="eyebrow-mini">Fractional GC • GCAAS</span>
+<h1>Tu departamento<br>legal externo.<br><i>Sin el costo<br>fijo.</i></h1>
+<div class="sub-latam">AHORA EN LATAM</div>
+<p class="hero-desc">Modelo probado en USA. Un socio senior de RGMA opera como tu Gerente Legal interno, dentro de tu Slack / Teams, con fee fijo y predecible.</p>
+<div style="margin-top:10px;display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+  <a href="#planes" class="btn-flex">Solicitá tu propuesta Flex →</a>
+  <span style="font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.45);text-transform:uppercase">Respuesta en 24hs</span>
+</div>
+</div>
+<div class="sec-claro" style="border-radius:2px">
+<span class="eyebrow">Modelo</span>
+<h2 class="titulo-sec osc">Legal operativo,<br>no solo consultivo.</h2>
+<div class="grid3">
+<div class="card"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H9M17 7V15"/></svg><h3>On-Demand</h3><p>Usanos cuando nos necesites. Pausá cuando no. Sin retainer eterno.</p></div>
+<div class="card"><svg viewBox="0 0 24 24"><path d="M16 21V19A4 4 0 0 0 12 15H8A4 4 0 0 0 4 19V21"/><circle cx="12" cy="7" r="4"/></svg><h3>Seniority Real</h3><p>Socio de RGMA dedicado. No un junior tercerizado ni chatbot legal.</p></div>
+<div class="card"><svg viewBox="0 0 24 24"><path d="M12 2V22M17 5H9.5A3.5 3.5 0 0 0 9.5 12H14.5A3.5 3.5 0 0 1 14.5 19H6"/></svg><h3>Fee Predecible</h3><p>Una cuota mensual fija. Hasta 60% menos que un GC interno full-time.</p></div>
+</div>
+</div>
+</section>
+
+<section class="sec-oscuro">
+<span class="eyebrow" style="color:#C8B090">Diferencial</span>
+<h2 class="titulo-sec claro">Estudio tradicional<br>vs RGMA FLEX</h2>
+<div class="tabla-comp">
+<div class="col-comp trad"><h4>Estudio Tradicional</h4><ul><li>✕ Facturación por hora impredecible</li><li>✕ Respuesta en 48/72hs</li><li>✕ Cada consulta es un presupuesto</li><li>✕ Sin contexto de tu negocio</li></ul></div>
+<div class="col-comp flex"><h4>RGMA FLEX</h4><ul><li>✓ Fee mensual fijo y predecible</li><li>✓ Slack / WhatsApp directo con tu GC</li><li>✓ Todo incluido en el plan</li><li>✓ Inmersión en tu compañía</li></ul></div>
+</div>
+</section>
+
+<section class="sec-claro" id="planes">
+<span class="eyebrow">Planes</span>
+<h2 class="titulo-sec osc">Escalá sin contratar.</h2>
+<div class="plans">
+<div class="plan"><h5>Starter</h5><div class="price">Para validar</div><p>Hasta 15hs / mes. Ideal pre-seed / seed.</p><ul><li>— Contratos y NDAs ilimitados</li><li>— Consultas diarias</li><li>— 1 workshop mensual</li></ul></div>
+<div class="plan destacado"><h5>Growth — Más elegido</h5><div class="price">Para crecer</div><p>Hasta 35hs / mes. Ideal Serie A + contratación.</p><ul><li>— Todo de Starter +</li><li>— M&A / Due diligence light</li><li>— Políticas internas y RRHH</li><li>— Presencia en directorio (1x mes)</li></ul></div>
+<div class="plan"><h5>Scale</h5><div class="price">Para expandir</div><p>Hasta 60hs / mes. LATAM expansion.</p><ul><li>— Todo de Growth +</li><li>— Expansión Mercosur</li><li>— GC dedicado casi full-time</li><li>— Prioridad absoluta</li></ul></div>
+</div>
+<div style="text-align:center;margin-top:48px"><a href="index.html#contacto" class="btn-flex dark">Cotizá tu plan Flex →</a></div>
+</section>
+
+<footer>© 2026 RGMA — Área FLEX | AHORA EN LATAM</footer>
+
+<script>
+window.addEventListener('load',()=>{
+  const pre=document.getElementById('preloader-flex');
+  setTimeout(()=>{pre.classList.add('oculto');setTimeout(()=>pre.style.display='none',600)},900);
+});
+</script>
+</body>
+</html>
