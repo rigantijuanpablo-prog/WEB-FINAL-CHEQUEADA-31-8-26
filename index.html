@@ -9,6 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+    <script>
+const v = document.getElementById('heroVideo');
+v.addEventListener('loadeddata', ()=> v.classList.add('is-loaded'));
+v.addEventListener('canplay', ()=> v.classList.add('is-loaded'));
+setTimeout(()=> v.classList.add('is-loaded'), 800);
+</script>
 <body>
 
 <div class="barra-flotante-contacto">
@@ -97,8 +103,8 @@
 </div>
 
 <section id="inicio" class="hero-principal">
-    <video autoplay muted loop playsinline preload="auto" class="hero-video">
-  <source src="hero-acuarela-12s.mp4" type="video/mp4">
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="hero-video" poster="poster-acuarela.jpg">
+  <source src="./hero-acuarela-12s.mp4" type="video/mp4">
 </video>
     <div class="hero-overlay"></div>
     <div class="hero-contenedor-texto">
@@ -217,5 +223,5 @@ accBtn?.addEventListener('click', ()=> {
 // Cerrar al clickear link
 mobileMenu?.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> mobileMenu.classList.remove('open')));
 </script>
-</body>
+    </body>
 </html>
