@@ -21,8 +21,10 @@ body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit
 .slide{position:absolute;inset:0;display:flex;opacity:0;visibility:hidden;transition:opacity.9s cubic-bezier(.16,1,.3,1),visibility.9s;pointer-events:none}
 .slide.active{opacity:1;visibility:visible;pointer-events:auto;z-index:2}
 .s-left{width:42%;display:flex;flex-direction:column;justify-content:center;padding:0 5% 0 6%;background:var(--navy)}
-.s-right{width:58%;position:relative;overflow:hidden}
+.s-right{width:58%;position:relative;overflow:hidden;background:var(--navy)}
 .s-right img{width:100%;height:100%;object-fit:cover;display:block}
+/* CORTE RECTO - SIN ESFUMADO */
+.s-right::after{content:none!important; display:none!important;}
 .eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#8aa0c8;margin-bottom:28px}
 .title{font-family:'Playfair Display';font-size:clamp(32px,3.8vw,54px);line-height:.95;font-weight:300;color:#fff;margin-bottom:22px}
 .desc{font-size:14px;line-height:1.7;color:rgba(255,255,255,.62);max-width:380px;margin-bottom:32px;font-weight:300}
@@ -42,16 +44,16 @@ body{font-family:'Inter',system-ui;background:var(--paper);color:#1a1a1a;-webkit
 .dropdown{position:relative;padding:24px 0}
 .dropdown-trigger{color:var(--gold)!important;font-weight:700;cursor:pointer}
 .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);display:none;min-width:220px;background:var(--navy);border-top:2px solid var(--gold);box-shadow:0 20px 40px rgba(0,0,0,.25);z-index:100}
-.dropdown:hover .dropdown-menu,
-.dropdown:focus-within .dropdown-menu,
+.dropdown:hover.dropdown-menu,
+.dropdown:focus-within.dropdown-menu,
 .dropdown-menu:hover{display:block}
 .dropdown-menu a{display:block;padding:13px 22px;color:rgba(255,255,255,.7);font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.07)}
 .dropdown-menu a:hover{background:rgba(255,255,255,.06);color:var(--gold)}
 .areas{background:var(--navy);overflow:hidden}
 .a-slide{display:none;grid-template-columns:1.1fr.9fr;gap:80px;max-width:1280px;margin:0 auto;padding:88px 40px;align-items:center}
 .a-slide.active{display:grid;animation:fade.6s ease}
- .sticky-nav{overflow:visible}
-.nav-inner{overflow:visible} 
+.sticky-nav{overflow:visible}
+.nav-inner{overflow:visible}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);padding:36px}
 .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid rgba(255,255,255,.12);padding-top:26px;margin-top:36px}
@@ -242,7 +244,7 @@ function setLang(l){
     if(counter) counter.textContent=`0${cur+1} — 0${slides.length}`;
   };
   const goHero = (n) => { cur=(n+slides.length)%slides.length; renderHero(); restartHero(); };
-  const restartHero = () => { clearInterval(tHero); if(document.hidden) return; tHero=setInterval(()=>goHero(cur+1),5500); };
+  const restartHero = () => { clearInterval(tHero); if(document.hidden) return; tHero=setInterval(()=>goHero(cur+1),10000); };
   hero.querySelector('[data-action="prev"]').addEventListener('click', ()=>goHero(cur-1));
   hero.querySelector('[data-action="next"]').addEventListener('click', ()=>goHero(cur+1));
   hero.addEventListener('mouseenter', ()=>clearInterval(tHero));
@@ -253,10 +255,10 @@ function setLang(l){
   const aDots=[...document.querySelectorAll('.a-dot')];
   let aCur=0, tArea=null;
   const renderArea=()=>{aSlides.forEach((s,i)=>s.classList.toggle('active',i===aCur));aDots.forEach((d,i)=>d.classList.toggle('active',i===aCur));};
-  const goArea=(n)=>{aCur=(n+aSlides.length)%aSlides.length;renderArea();document.getElementById('areas').scrollIntoView({behavior:'smooth',block:'start'});clearInterval(tArea);tArea=setInterval(()=>{aCur=(aCur+1)%aSlides.length;renderArea();},7000);};
+  const goArea=(n)=>{aCur=(n+aSlides.length)%aSlides.length;renderArea();document.getElementById('areas').scrollIntoView({behavior:'smooth',block:'start'});clearInterval(tArea);tArea=setInterval(()=>{aCur=(aCur+1)%aSlides.length;renderArea();},10000);};
   aDots.forEach(d=>d.addEventListener('click',()=>goArea(+d.dataset.go)));
   document.querySelectorAll('[data-go]').forEach(el=>el.addEventListener('click',(e)=>{e.preventDefault();goArea(+el.dataset.go);}));
-  tArea=setInterval(()=>{aCur=(aCur+1)%aSlides.length;renderArea();},7000);
+  tArea=setInterval(()=>{aCur=(aCur+1)%aSlides.length;renderArea();},10000);
   document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
   const saved = localStorage.getItem('rgma_lang') || 'en';
   setLang(saved);
