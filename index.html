@@ -8,29 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600&family=Inter:wght@300;400;500;600&family=Lora:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-      .nav-item-mega{ position:relative; }
-      .mega-panel{
-        position:fixed; left:0; right:0; top:82px;
-        background:#f5f4f1; border-top:1px solid rgba(0,0,0,.08);
-        padding:38px 5% 42px; display:none;
-        grid-template-columns:180px 1fr;
-        gap:40px; z-index:999;
-        box-shadow:0 20px 40px rgba(0,0,0,.08);
-      }
-      .nav-item-mega:hover .mega-panel, .mega-panel:hover{ display:grid; }
-      .mega-left b{ display:block; font-family:'Inter',sans-serif; font-size:17px; font-weight:700; margin-bottom:22px; border-bottom:2px solid #111; width:fit-content; padding-bottom:4px; }
-      .mega-left span{ display:block; font-family:'Inter',sans-serif; font-size:15px; font-weight:700; margin-top:28px; }
-      .mega-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:28px 32px; }
-      .mega-col h4{ font-family:'Inter',sans-serif; font-size:13px; font-weight:700; line-height:1.3; margin:0 0 10px; color:#111; display:flex; gap:7px; }
-      .mega-col h4::before{ content:''; width:8px; height:8px; background:#111; border-radius:1px; margin-top:4px; flex-shrink:0; }
-      .mega-col ul{ list-style:none; padding:0 0 0 15px; margin:0; }
-      .mega-col ul li{ font-family:'Inter',sans-serif; font-size:12px; line-height:1.5; color:#444; margin-bottom:6px; }
-      .mega-col ul li::before{ content:'• '; }
-      #mainHeader.shrink .mega-panel{ top:62px; }
-      @media(max-width:1100px){ .mega-panel{ grid-template-columns:1fr; padding:20px 5%; max-height:80vh; overflow:auto; } .mega-grid{ grid-template-columns:1fr 1fr; } }
-      @media(max-width:640px){ .mega-grid{ grid-template-columns:1fr; } }
-    </style>
 </head>
 <body>
 
@@ -55,85 +32,15 @@
         <li class="nav-item-mega">
           <a href="#">ÁREAS DE PRÁCTICA</a>
           <div class="mega-panel">
-            <div class="mega-left">
-              <b>Áreas de Práctica</b>
-              <span>International Desks</span>
-              <p style="font-size:12px; color:#666; margin-top:8px; line-height:1.5">Investment in Argentina<br>FLEX Counsel<br>MERCOSUR</p>
-            </div>
+            <div class="mega-left"><b>Áreas de Práctica</b></div>
             <div class="mega-grid">
-              <div class="mega-col active">
-                <h4>Derecho Empresario y Asesoramiento PyMEs</h4>
-                <ul>
-                  <li>Constitución, estructuración y reorganización de sociedades comerciales</li>
-                  <li>Consultoría preventiva y auditoría legal (due diligence) para PyMEs</li>
-                  <li>Planificación fiscal, aduanera y optimización del Derecho Tributario</li>
-                  <li>Procesos de reestructuración de deuda, Concursos y Quiebras</li>
-                  <li>Redacción, negociación y auditoría de contratos comerciales complejos</li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <h4>Derecho Laboral Empresario</h4>
-                <ul>
-                  <li>Asesoramiento preventivo en contratación y desvinculación de personal</li>
-                  <li>Defensa jurídica en litigios laborales individuales y colectivos</li>
-                  <li>Auditorías laborales y mitigación de contingencias en la empresa</li>
-                  <li>Negociación colectiva, relaciones sindicales y convenios</li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <h4>Derecho Civil, Patrimonial y Seguros</h4>
-                <ul>
-                  <li>Reclamaciones por Daños y Perjuicios, responsabilidad civil y contratos</li>
-                  <li>Estrategias preventivas y litigios en accidentes de tránsito y seguros</li>
-                  <li>Planificación patrimonial, Derecho de Familia, Divorcios y Sucesiones complejas</li>
-                  <li>Recupero de activos, gestión de mora y ejecución de títulos</li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <h4>Derecho Inmobiliario y Propiedad Horizontal</h4>
-                <ul>
-                  <li>Estructuración legal de desarrollos inmobiliarios, fideicomisos y loteos</li>
-                  <li>Asesoramiento integral a consorcios, administraciones y Propiedad Horizontal</li>
-                  <li>Redacción y revisión de contratos de locación, compraventa y permutas</li>
-                  <li>Conflictos de vecindad, desalojos y defensa de derechos reales</li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <h4>Negocios Digitales, Propiedad Intelectual y Consumidor</h4>
-                <ul>
-                  <li>Cumplimiento normativo en adopción de IA, gobernanza de datos y privacidad</li>
-                  <li>Registro y defensa de marcas, patentes, derechos de autor y Propiedad Intelectual</li>
-                  <li>Auditoría de plataformas e-commerce y contratos tecnológicos</li>
-                  <li>Defensa corporativa en reclamos de Derecho del Consumidor y lealtad comercial</li>
-                </ul>
-              </div>
-              <div class="mega-col">
-                <h4>Derecho Administrativo y Regulación Económica</h4>
-                <ul>
-                  <li>Licitaciones públicas, contrataciones con el Estado y concesiones</li>
-                  <li>Impugnación de actos administrativos, recursos y reclamos previos</li>
-                  <li>Defensa ante multas, sanciones y sumarios de entes reguladores</li>
-                  <li>Litigios contencioso-administrativos a nivel municipal, provincial y federal</li>
-                </ul>
-              </div>
-              <div class="mega-col" style="background:#0A1120; padding:14px; border-radius:4px;">
-                <h4 style="color:#C8B090">Derecho Deportivo y Entretenimiento</h4>
-                <ul>
-                  <li style="color:rgba(255,255,255,.7)">Redacción, negociación y rescisión de contratos de transferencia de deportistas</li>
-                  <li style="color:rgba(255,255,255,.7)">Asesoramiento integral a clubes, federaciones, agentes, intermediarios y atletas</li>
-                  <li style="color:rgba(255,255,255,.7)">Protección y explotación comercial de derechos de imagen, patrocinio y sponsorship</li>
-                  <li style="color:rgba(255,255,255,.7)">Litigios ante AFA, FIFA, TAS/CAS</li>
-                  <li style="color:rgba(255,255,255,.7)">Gobernanza y consultoría para entidades deportivas</li>
-                </ul>
-              </div>
-              <div class="mega-col" style="border:1px dashed #C8B090; padding:14px; border-radius:4px;">
-                <h4 style="color:#C8B090">ÁREA FLEX - Flex Counsel</h4>
-                <ul>
-                  <li>GCaaS mensual</li>
-                  <li>On-demand</li>
-                  <li>Hasta 60% ahorro</li>
-                </ul>
-              </div>
+              <div class="mega-col"><h4>Derecho Empresario y Asesoramiento PyMEs</h4><ul><li>Constitución, estructuración y reorganización de sociedades comerciales</li><li>Consultoría preventiva y auditoría legal (due diligence) para PyMEs</li><li>Planificación fiscal, aduanera y optimización del Derecho Tributario</li><li>Reestructuración de deuda, Concursos y Quiebras</li><li>Contratos comerciales complejos</li></ul></div>
+              <div class="mega-col"><h4>Derecho Laboral Empresario</h4><ul><li>Asesoramiento preventivo en contratación y desvinculación</li><li>Defensa en litigios individuales y colectivos</li><li>Auditorías laborales y mitigación de contingencias</li><li>Negociación colectiva y sindicatos</li></ul></div>
+              <div class="mega-col"><h4>Derecho Civil, Patrimonial y Seguros</h4><ul><li>Reclamaciones por Daños y Perjuicios, responsabilidad civil</li><li>Accidentes de tránsito y seguros</li><li>Planificación patrimonial, Familia, Divorcios y Sucesiones complejas</li><li>Recupero de activos y ejecución de títulos</li></ul></div>
+              <div class="mega-col"><h4>Derecho Inmobiliario y Propiedad Horizontal</h4><ul><li>Desarrollos inmobiliarios, fideicomisos y loteos</li><li>Consorcios y PH</li><li>Locación, compraventa y permutas</li><li>Desalojos y derechos reales</li></ul></div>
+              <div class="mega-col"><h4>Negocios Digitales, Propiedad Intelectual y Consumidor</h4><ul><li>IA, gobernanza de datos y privacidad</li><li>Marcas, patentes, derechos de autor e IP</li><li>E-commerce y contratos tecnológicos</li><li>Consumidor y lealtad comercial</li></ul></div>
+              <div class="mega-col"><h4>Derecho Administrativo y Regulación Económica</h4><ul><li>Licitaciones públicas y concesiones</li><li>Actos administrativos y reclamos</li><li>Multas, sanciones y sumarios</li><li>Contencioso-administrativo</li></ul></div>
+              <div class="mega-col"><h4>Derecho Deportivo y Entretenimiento</h4><ul><li>Transferencia de deportistas</li><li>Clubes, federaciones, agentes y atletas</li><li>Imagen, patrocinio y sponsorship</li><li>AFA, FIFA, TAS/CAS</li></ul></div>
             </div>
           </div>
         </li>
@@ -147,9 +54,7 @@
       <span class="pill-text">Investment in Argentina</span>
     </a>
    </div> 
-</header>
-
-<section id="inicio" class="hero-principal">
+    <section id="inicio" class="hero-principal">
     <video autoplay muted loop playsinline class="hero-video"><source src="hero-acuarela-12s.mp4" type="video/mp4"></video>
     <div class="hero-overlay"></div>
     <div class="hero-contenedor-texto">
@@ -171,11 +76,11 @@
 </section>
 
 <section id="estudio">
-  <div style="max-width:1400px; margin:0 auto; padding:90px 5%; display:grid; grid-template-columns:1.15fr .85fr; gap:48px; align-items:start;">
+  <div style="margin-bottom:26px">
     <div class="texto-estudio">
       <span style="font-size:11px; letter-spacing:4px; color:var(--dorado); font-weight:600; display:block; margin-bottom:14px;">RGMA | CONSULTORÍA JURÍDICA ESTRATÉGICA</span>
       <p>Brindamos asesoramiento jurídico integral a personas, empresas y organizaciones, combinando solvencia técnica, visión práctica y una atención estrictamente personalizada.</p>
-      <h2 style="font-size:40px;line-height:1.15;margin:18px 0 28px;font-weight:400">Consolidamos la trayectoria<br><i style="color:var(--dorado);font-family:'Lora',serif;font-weight:300">bajo un modelo de boutique legal.</i></h2>
+      <h2 style="font-size:40px;line-height:1.15;margin:8px 0 28px;font-weight:400">Consolidamos la trayectoria<br><i style="color:var(--dorado);font-family:'Lora',serif;font-weight:300">bajo un modelo de boutique legal.</i></h2>
       <div class="linea-decorativa" style="margin:0 0 28px 0"></div>
       <p>Consolidamos la trayectoria y experiencia de firmas preexistentes bajo un modelo de boutique legal. Elegimos este enfoque porque estamos convencidos de que la ciencia jurídica pierde eficacia dentro de las grandes estructuras corporativas masivas.</p>
       <p><strong>Abogacía de Precisión:</strong> cada cliente recibe una estrategia a la medida de sus objetivos, con el respaldo de un equipo de primer nivel.</p>
@@ -185,24 +90,12 @@
     <div>
       <div class="tarjeta-valor"><h4>ENFOQUE PREVENTIVO</h4><p>Anticipación de escenarios de riesgo normativo para mitigar contingencias antes de que ocurran.</p></div>
       <div class="tarjeta-valor"><h4>DECISIONES ESTRATÉGICAS</h4><p>Diseñamos soluciones eficaces y mantenemos una comunicación clara para acompañar de cerca su toma de decisiones.</p></div>
-      <div class="tarjeta-valor" style="background:var(--navy);padding:26px 22px;border-left:1.5px solid var(--dorado)"><h4 style="color:var(--dorado)">RIGOR TÉCNICO Y VISIÓN PRÁCTICA</h4><p style="color:rgba(255,255,255,.75)">Cada asunto es analizado al detalle por especialistas, asegurando respuestas viables, seguras y sostenibles.</p></div>
+      <div class="tarjeta-valor"><h4>RIGOR TÉCNICO Y VISIÓN PRÁCTICA</h4><p>Cada asunto es analizado al detalle por especialistas, asegurando respuestas viables, seguras y sostenibles.</p></div>
+      <div class="tarjeta-valor" style="background:var(--navy);padding:26px 22px;border-left:1.5px solid var(--dorado)"><h4 style="color:var(--dorado)">TRANSPARENCIA</h4><p style="color:rgba(255,255,255,.65)">Confidencialidad absoluta y ética inquebrantable en cada caso.</p></div>
     </div>
   </div>
 </section>
-
-<section class="seccion-faq">
-  <div class="encabezado-seccion"><h2>Protocolo de Vinculación</h2><div class="linea-decorativa"></div></div>
-  <div class="contenedor-faq">
-    <div class="acordeon-premium">
-      <details open><summary>1. Modalidad de Trabajo y Auditoría Inicial</summary><div>No operamos bajo consultas aisladas. Todo vínculo inicia con una Auditoría Diagnóstica Integral.</div></details>
-      <details><summary>2. Confidencialidad y Reserva Absoluta</summary><div>Todos los casos se tratan bajo estricta confidencialidad.</div></details>
-      <details><summary>3. Esquema de Honorarios</summary><div>Honorarios transparentes según complejidad.</div></details>
-      <details><summary>4. Selección y Admisión de Casos</summary><div>Evaluamos cada caso para garantizar representación efectiva.</div></details>
-    </div>
-  </div>
-</section>
-
-<section class="seccion-cierre-premium" style="position:relative;background:#0A1120 url('boceto.webp') center/cover no-repeat; padding:110px 20px; text-align:center; overflow:hidden">
+    <section class="seccion-cierre-premium" style="position:relative;background:#0A1120 url('boceto.webp') center/cover no-repeat; padding:110px 20px; text-align:center; overflow:hidden">
   <div style="position:absolute;inset:0;background:rgba(10,17,32,0.82)"></div>
   <div class="contenido-cierre" style="position:relative;z-index:2;max-width:800px;margin:0 auto">
     <span class="subtitulo-cierre" style="color:#C8B090;font-size:11px;letter-spacing:4.5px;text-transform:uppercase;display:block;margin-bottom:22px">CARRERA EN RGM</span>
@@ -236,11 +129,25 @@
       <img src="isologo-dorado-transparente.png" alt="RGM Abogados" class="footer-isologo">
       <p class="f-claim">Trayectoria legal con<br>perspectiva de vanguardia.</p>
       <div class="f-line"></div>
-      <div class="f-copy-brand"><span>RIGANTI, GEILER</span><br><span>& MÁRQUEZ ALLURALDE</span></div>
+      <div class="f-copy-brand">
+        <span>RIGANTI, GEILER</span><br>
+        <span>& MÁRQUEZ ALLURALDE</span>
+      </div>
     </div>
-    <div class="f-col"><span class="f-title">ÁREAS CLAVE</span><a href="#">Empresario y PyMEs</a><a href="#">Laboral Empresario</a><a href="#">Civil y Seguros</a><a href="#">Inmobiliario y PH</a><a href="#">Digital, IP y Consumidor</a><a href="#">Administrativo y Regulación</a><a href="#">Deportivo y Entretenimiento</a></div>
-    <div class="f-col"><span class="f-title">MERCOSUR</span><p>Red de corresponsalías en principales centros del país y región.</p><div class="f-contact"><p>CABA · Buenos Aires</p><p>+54 11 4321-5555</p><p>contacto@rgmabogados.com.ar</p></div></div>
-    <div class="f-col"><span class="f-title">CONSULTA</span><p class="f-consulta-txt">Atención personalizada,<br>confidencial y estratégica.</p><a href="#contacto" class="f-btn">AGENDAR CONSULTA →</a></div>
+    <div class="f-col">
+      <span class="f-title">ÁREAS CLAVE</span>
+      <a href="#">Empresario y PyMEs</a><a href="#">Laboral Empresario</a><a href="#">Civil y Seguros</a><a href="#">Inmobiliario y PH</a><a href="#">Digital, IP y Consumidor</a><a href="#">Administrativo</a><a href="#">Deportivo</a>
+    </div>
+    <div class="f-col">
+      <span class="f-title">MERCOSUR</span>
+      <p>Red de corresponsalías en principales centros del país y región.</p>
+      <div class="f-contact"><p>CABA · Buenos Aires</p><p>+54 11 4321-5555</p><p>contacto@rgmabogados.com.ar</p></div>
+    </div>
+    <div class="f-col">
+      <span class="f-title">CONSULTA</span>
+      <p class="f-consulta-txt">Atención personalizada,<br>confidencial y estratégica.</p>
+      <a href="#contacto" class="f-btn">AGENDAR CONSULTA →</a>
+    </div>
   </div>
   <div class="f-bottom"><p>© 2026 RIGANTI, GEILER & MÁRQUEZ ALLURALDE — CABA · MERCOSUR</p></div>
 </footer>
@@ -248,33 +155,28 @@
 <style>
 .footer-rgm{ background:#070b14; padding:75px 5% 0; border-top:1px solid rgba(200,176,144,0.15); font-family:'Inter',sans-serif; }
 .footer-inner{ max-width:1400px; margin:0 auto; display:grid; grid-template-columns:1.6fr 0.8fr 1fr 1fr; gap:50px; align-items:start; }
-.f-col.brand{ display:flex; flex-direction:column; align-items:center; text-align:left; padding-top:8px; }
-.footer-isologo{ height:62px !important; width:auto; display:block; }
-.f-claim{ font-family:'Lora',serif; font-style:italic; font-size:14px; color:#9aa8c0; line-height:1.4; margin-top:20px !important; text-align:center; }
-.f-line{ width:28px !important; height:1px; background:#C8B090; margin:22px 0 !important; }
-.f-copy-brand{ font-family:'Inter',sans-serif; font-weight:300; font-size:10px !important; letter-spacing:2.8px !important; color:#8a92a6 !important; line-height:1.9; text-transform:uppercase; text-align:left; }
+.f-col.brand{ display:flex; flex-direction:column; align-items:center; text-align:left; }
+.footer-isologo{ height:62px; width:auto; display:block; }
+.f-claim{ font-family:'Lora',serif; font-style:italic; font-size:14px; color:#9aa8c0; line-height:1.4; margin-top:20px; text-align:center; }
+.f-line{ width:28px; height:1px; background:#C8B090; margin:22px 0; }
+.f-copy-brand{ font-family:'Inter',sans-serif; font-weight:300; font-size:10px; letter-spacing:2.8px; color:#8a92a6; line-height:1.9; text-transform:uppercase; }
 .f-title{ display:block; font-size:10px; letter-spacing:3px; color:#C8B090; margin-bottom:22px; font-weight:600; }
 .f-col a{ display:block; color:#a8aebb; text-decoration:none; font-size:13px; margin-bottom:11px; }
 .f-col a:hover{ color:#E8DCC8; }
 .f-col p{ font-size:13px; line-height:1.7; color:#8a90a0; margin:0; }
 .f-contact{ margin-top:16px; }
 .f-btn{ border:1px solid #C8B090; padding:12px 22px; display:inline-block !important; font-size:11px !important; letter-spacing:1.8px; color:#E8DCC8 !important; margin-top:12px; text-decoration:none; }
-.f-btn:hover{ background:#C8B090; color:#070b14 !important; }
-.f-bottom{ max-width:1400px; margin:50px auto 0 !important; padding:24px 0; border-top:1px solid rgba(255,255,255,0.06); text-align:center; font-size:10px; letter-spacing:1.2px; color:#4e5463; opacity:0.8; }
-.f-col{ padding-top:6px; }
+.f-bottom{ max-width:1400px; margin:50px auto 0; padding:24px 0; border-top:1px solid rgba(255,255,255,0.06); text-align:center; font-size:10px; letter-spacing:1.2px; color:#4e5463; opacity:0.8; }
 </style>
 
 <script>
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.15});
-document.querySelectorAll('.tarjeta-corporativa').forEach(c=>obs.observe(c));
 const header = document.getElementById('mainHeader');
 const hero = document.querySelector('.hero-principal');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 80) header.classList.add('shrink');
-  else header.classList.remove('shrink');
-  if(window.scrollY > hero.offsetHeight - 150) document.body.classList.add('pill-visible');
-  else document.body.classList.remove('pill-visible');
+  if (window.scrollY > 80) { header.classList.add('shrink'); } else { header.classList.remove('shrink'); }
+  if(hero && window.scrollY > hero.offsetHeight - 150){ document.body.classList.add('pill-visible'); } else { document.body.classList.remove('pill-visible'); }
 }, {passive:true});
 </script>
 </body>
 </html>
+</header>
