@@ -273,3 +273,22 @@ nav ul{ overflow:visible !important; }
   background: linear-gradient(90deg, rgba(13,18,30,0.92) 0%, rgba(13,18,30,0.6) 50%, rgba(13,18,30,0.2) 100%) !important;
 }
 .hero-contenedor-texto, .investment-seal-link{ z-index:3 !important; position:relative !important; }
+/* FIX CIRCULO NEW */
+.hero-principal{
+  display:flex !important;
+  align-items:center !important;
+}
+.hero-contenedor-texto{
+  position:relative !important;
+  z-index:3 !important;
+  width:50% !important;
+}
+.investment-seal-link{
+  position:absolute !important;
+  bottom:40px !important;
+  right:50px !important;
+  left:auto !important;
+  top:auto !important;
+  z-index:4 !important;
+  transform:scale(0.9);
+}
