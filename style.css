@@ -249,21 +249,27 @@ nav ul{ overflow:visible !important; }
   letter-spacing:2.4px !important;
 }
 .mega-grid-simple a:hover i{ opacity:1; transform:translateX(0); }
-/* FADE-IN VIDEO PREMIUM - EVITA PANTALLA NEGRA */
-.hero-principal{ background:#0D121E; }
+/* VIDEO FIX EMERGENCIA */
+.hero-principal{
+  position:relative !important;
+  background:#0D121E !important;
+  min-height:100vh !important;
+  overflow:hidden !important;
+}
 .hero-video{
-  opacity:0;
-  transition: opacity 1.2s ease;
+  position:absolute !important;
+  top:0; left:0;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  z-index:1 !important;
+  opacity:1 !important;
+  display:block !important;
 }
-.hero-video.is-loaded{
-  opacity:1;
+.hero-overlay{
+  position:absolute !important;
+  inset:0 !important;
+  z-index:2 !important;
+  background: linear-gradient(90deg, rgba(13,18,30,0.92) 0%, rgba(13,18,30,0.6) 50%, rgba(13,18,30,0.2) 100%) !important;
 }
-.hero-principal::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  z-index:1;
-  background: #0D121E url('nombre-logo-estudio.webp') no-repeat center;
-  background-size:80px;
-  opacity:0.15;
-}
+.hero-contenedor-texto, .investment-seal-link{ z-index:3 !important; position:relative !important; }
