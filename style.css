@@ -108,32 +108,47 @@ section{padding:110px 12%}.encabezado-seccion{text-align:center;max-width:780px;
 .pill-text{font-size:11px!important;letter-spacing:0.8px!important;color:#E8DCC8!important;font-weight:500!important}
 body.pill-visible .investment-pill{opacity:1!important;transform:translateX(0)!important;pointer-events:auto!important}
 
-/* BURGER + MOBILE */
-.btn-burger{display:none;width:36px;height:36px;background:transparent;border:1px solid rgba(200,176,144,.4);flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer}
-.btn-burger span{display:block;width:18px;height:1.5px;background:#E8DCC8;transition:.3s}
-.mobile-overlay{position:fixed;top:0;right:-100%;width:88%;max-width:340px;height:100vh;background:#0D121E;z-index:10000;transition:right .4s cubic-bezier(0.2,0.8,0.2,1);padding:24px;overflow-y:auto;border-left:1px solid rgba(200,176,144,.15)}
-.mobile-overlay.open{right:0}
-.mobile-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;color:#C8B090;font-size:11px;letter-spacing:3px}
-.mobile-head button{background:none;border:none;color:#fff;font-size:20px;cursor:pointer}
-.mobile-links{list-style:none}
-.mobile-links li{border-bottom:1px solid rgba(255,255,255,.07)}
-.mobile-links a{display:block;padding:16px 0;color:#E8E8E8;text-decoration:none;font-size:12px;letter-spacing:2px;text-transform:uppercase}
-.mobile-links .mobile-cta{border:none;margin-top:24px}
-.mobile-links .mobile-cta a{border:1px solid #C8B090;text-align:center;padding:18px;color:#E8DCC8}
-.acc-btn{width:100%;background:none;border:none;color:#E8E8E8;font-size:12px;letter-spacing:2px;text-transform:uppercase;padding:16px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Inter',sans-serif}
-.acc-panel{display:none;padding:0 0 16px 8px}
-.acc-panel.open{display:block}
-.acc-panel a{font-size:13px!important;letter-spacing:.5px!important;text-transform:none!important;color:#a8aebb!important;padding:10px 0!important}
+<div class="acc-panel" id="panelAreas">
+  <a href="derecho-civil-comercial.html">Derecho Civil y Comercial</a>
+  <a href="derecho-familia.html">Derecho de Familia</a>
+  <a href="sucesiones.html">Sucesiones</a>
+  <a href="derecho-inmobiliario.html">Inmobiliario y PH</a>
+  <a href="derecho-administrativo.html">Administrativo</a>
+  <a href="derecho-laboral.html">Laboral</a>
+  <a href="derecho-consumidor.html">Consumidor</a>
+  <a href="derecho-empresarial.html">Empresarial</a>
+  <a href="contratos-preventivo.html">Contratos</a>
+  <a href="litigios.html">Litigios</a>
+  <a href="derecho-deportivo.html">Deportivo y Entretenimiento</a>
+  <a href="derecho-civil-seguros.html">Civil, Patrimonial y Seguros</a>
+  <a href="patrimonio-familiar.html">Patrimonio Familiar</a>
+</div>
+/* MEGA SIMPLE - SOLO TITULOS */
+.mega-grid-simple{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:14px 32px;
+}
+.mega-link-title{
+  font-family:'Inter',sans-serif;
+  font-size:12.5px;
+  font-weight:700;
+  color:#111;
+  text-decoration:none;
+  text-transform:uppercase;
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  line-height:1.3;
+  letter-spacing:.2px;
+  transition:.2s;
+}
+.mega-link-title span{
+  width:7px; height:7px; background:#111; display:block; margin-top:5px; flex-shrink:0;
+}
+.mega-link-title:hover{ color:#8a6a44; }
+.mega-link-title:hover span{ background:#C8B090; }
 
-@media(max-width:1150px){.mega-grid{grid-template-columns:repeat(2,1fr)}.mega-panel{grid-template-columns:140px 1fr;padding:28px 3%}}
-@media(max-width:1024px){#estudio>div,.contenedor-contacto,.footer-inner{grid-template-columns:1fr}}
-@media(max-width:768px){
-  header{padding:12px 5%}header nav{display:none!important}.btn-burger{display:flex}
-  .hero-contenedor-texto{margin:0 6%;padding-top:8vh;padding-bottom:100px;transform:none}
-  .hero-contenedor-texto h1{font-size:32px;line-height:1.2}
-  .btn-premium-final{width:fit-content;min-width:220px;padding:16px 32px;margin-top:35px;display:inline-flex;justify-content:center}
-  section{padding:80px 6%}.barra-flotante-contacto{display:none}
-  .investment-seal-link{right:5%;bottom:18%}.investment-seal{width:110px;height:110px}.seal-content{width:82px;height:82px}.seal-new{font-size:19px}
-  .seal-ring{width:96px;height:96px}.seal-ring-2{width:104px;height:104px}.seal-ring-3{width:112px;height:112px}
-  .hero-principal::after{height:120px;clip-path:polygon(0 75%,100% 100%,100% 100%,0 100%)}.hero-principal::before{bottom:118px}
+@media(max-width:900px){
+  .mega-grid-simple{ grid-template-columns:repeat(2,1fr); }
 }
