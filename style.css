@@ -292,3 +292,18 @@ nav ul{ overflow:visible !important; }
   z-index:4 !important;
   transform:scale(0.9);
 }
+/* FIX: evita que el H1 salte al cargar */
+.hero-contenedor-texto h1,
+.hero-titulo {
+  font-display: block !important;
+  width: 580px !important;
+  max-width: 90vw !important;
+  min-height: 210px !important;
+  line-height: 1.1 !important;
+  white-space: normal !important;
+  text-wrap: balance !important;
+  animation: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
