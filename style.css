@@ -249,3 +249,21 @@ nav ul{ overflow:visible !important; }
   letter-spacing:2.4px !important;
 }
 .mega-grid-simple a:hover i{ opacity:1; transform:translateX(0); }
+/* FADE-IN VIDEO PREMIUM - EVITA PANTALLA NEGRA */
+.hero-principal{ background:#0D121E; }
+.hero-video{
+  opacity:0;
+  transition: opacity 1.2s ease;
+}
+.hero-video.is-loaded{
+  opacity:1;
+}
+.hero-principal::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background: #0D121E url('nombre-logo-estudio.webp') no-repeat center;
+  background-size:80px;
+  opacity:0.15;
+}
